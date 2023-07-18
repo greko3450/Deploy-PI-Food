@@ -24,7 +24,7 @@ const {PORT} = process.env //*esto es de db importa de db
 // const fetchData = require("./src/controller/index.js");
 // const {savedApi} = require('./src/controller/index.js');
 // Syncing all the models at once.
-conn.sync({ force: false}).then(() => {
+conn.sync({ force: true}).then(() => {
 
 //  console.log(savedApi().then((d) => console.log(d)));
 
