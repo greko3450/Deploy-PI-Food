@@ -19,7 +19,7 @@ export const SEARCH_DIET = "SEARCH_DIET";
 export const searchRecipeAll= () => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`http://localhost:3001/recipes`);
+      const response = await fetch(`https://deploy-production-1658.up.railway.app`);
       const recipes = await response.json();
       dispatch({
         type: SEARCH_RECIPE_ALL,
@@ -148,7 +148,7 @@ export const createdApi = (created) => {
 export const searchRecipe = (name) => {
   return async (dispatch) => {
     try {
-      const url = name ? `http://localhost:3001/recipes?name=${name}` : '/recipes';
+      const url = name ? `https://deploy-production-1658.up.railway.app/recipes?name=${name}` : '/recipes';
       const response = await fetch(url);
       // const response = await fetch(`http://localhost:3001/recipes?name=${name}`);
       const data = await response.json();
@@ -198,7 +198,7 @@ export const createRecipe = (form) => {
 export const searchDiet = () => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`http://localhost:3001/diets`);
+      const response = await fetch(`https://deploy-production-1658.up.railway.app/diets`);
       const diet = await response.json();
       dispatch({
         type: SEARCH_DIET,

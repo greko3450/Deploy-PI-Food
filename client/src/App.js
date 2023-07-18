@@ -10,7 +10,7 @@ import {Routes, Route} from "react-router-dom";
 import Formulario from './components/form/Formulario.jsx';
 import axios from "axios";//deployed from server
 
-axios.defaults.baseURL = 'http://localhost:3001/';//deployed from server
+axios.defaults.baseURL = 'https://deploy-production-1658.up.railway.app/';//deployed from server
 
 
 function App() {
