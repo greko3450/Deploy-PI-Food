@@ -8,16 +8,18 @@ require('dotenv').config();//************ */
 const {
   DB_USER, 
   DB_PASSWORD, 
-  DB_HOST, 
+  DB_HOST,
+  DB_PORT,
+  DB_NAME 
   // API_KEY
-} = process.env;//************ */
+} = process.env;//************ */aa
 // if (!API_KEY) {
 //   throw new Error('No se ha encontrado la API key');
 // }
 
 
 // console.log(endPoint)
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
+const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });//************ */

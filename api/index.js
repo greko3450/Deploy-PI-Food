@@ -18,7 +18,9 @@
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require('./src/app.js');
-const { conn } = require('./src/db.js'); //*esto es de db importa de db
+const { conn } = require('./src/db.js');
+require("dotenv").config()
+const {PORT} = process.env //*esto es de db importa de db
 // const fetchData = require("./src/controller/index.js");
 // const {savedApi} = require('./src/controller/index.js');
 // Syncing all the models at once.
@@ -26,8 +28,8 @@ conn.sync({ force: false}).then(() => {
 
 //  console.log(savedApi().then((d) => console.log(d)));
 
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
+  server.listen(PORT, () => {
+    console.log('%s listening at' + PORT); // eslint-disable-line no-console
   });
 });
 // { force: true 
