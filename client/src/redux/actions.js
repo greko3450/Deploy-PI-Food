@@ -19,7 +19,7 @@ export const SEARCH_DIET = "SEARCH_DIET";
 export const searchRecipeAll= () => {
   return async (dispatch) => {
     try {
-      const response = await fetch(`https://deploy-production-1658.up.railway.app`);
+      const response = await fetch(`https://deploy-production-1658.up.railway.app/recipes`);
       const recipes = await response.json();
       dispatch({
         type: SEARCH_RECIPE_ALL,
