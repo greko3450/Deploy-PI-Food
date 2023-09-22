@@ -2,7 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import {NavLink, useParams} from "react-router-dom"
 import detalle from "./Detail.module.css"
-// axios.defaults.baseURL = 'http://localhost:3001/';//deployed from server
+
 
 function Detail(){
   let {id} = useParams()
@@ -11,7 +11,7 @@ function Detail(){
    useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`/recipes/${id}`);
+        const response = await axios.get(`http://localhost:3001/recipes/${id}`);
         setDetail(response.data);
       } catch (error) {
         console.log("no hay detalles " + error);
@@ -32,8 +32,8 @@ function Detail(){
         <p>Healthy food level health score. {detail.healthScore}</p>
         <p>Step by Step. {detail.steps}</p>
         <p>Types of diet. {detail.diets?.map(diet => diet.name).join(" ")}</p>
+        <img src={detail.image} alt={detail.name} />
       </div>
-      <img className={detalle.image} src={detail.image} alt={detail.name} />
     </div>
   )
 }
