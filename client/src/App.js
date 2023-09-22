@@ -8,6 +8,10 @@ import Detail from './components/pages/Detail.jsx';
 import Footer from './components/Footer.jsx';
 import {Routes, Route} from "react-router-dom";
 import Formulario from './components/form/Formulario.jsx';
+import axios from "axios";//deployed from server
+
+axios.defaults.baseURL = 'https://deploy-production-1658.up.railway.app/';//deployed from server
+
 
 function App() {
   return (
@@ -31,13 +35,4 @@ export default App;
   
     
 
-            
-
-        
-        
-        
-        
-
-          
-
-
+      

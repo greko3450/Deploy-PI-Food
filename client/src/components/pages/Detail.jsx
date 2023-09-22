@@ -2,7 +2,7 @@ import axios from "axios";
 import React, {useState, useEffect} from "react";
 import {NavLink, useParams} from "react-router-dom"
 import detalle from "./Detail.module.css"
-
+// axios.defaults.baseURL = 'http://localhost:3001/';//deployed from server
 
 function Detail(){
   let {id} = useParams()
@@ -11,7 +11,7 @@ function Detail(){
    useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get(`http://localhost:3001/recipes/${id}`);
+        const response = await axios.get(`/recipes/${id}`);
         setDetail(response.data);
       } catch (error) {
         console.log("no hay detalles " + error);
